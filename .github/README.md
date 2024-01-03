@@ -7,7 +7,22 @@
 
 > I must give credit where it's due, my setup is built on top of Neovim's [NvChad](https://nvchad.com/) flavour, created by the awesome [@sciduck](https://github.com/siduck)
 
-I've setup language servers for `Golang`, `Typescript` and `Javascript`. Also added debugger, code completions and auto-formatters.
+---
+
+## Added:
+- Language servers
+  - Golang
+  - Typescript
+  - Javascript
+- Auto imports
+- Check for unused variables in Golang
+- Debugger (Golang and Typescript)
+- Tailwind auto-completion snippets
+- Golang auto-completion snippets
+- Golang Auto-formatter
+
+> What is it?
+> - NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). UI plugins such as telescope, nvim-tree, bufferline etc are tweaked well to provide an aesthetic UI experience. 
 
 ---
 
@@ -18,9 +33,7 @@ I've setup language servers for `Golang`, `Typescript` and `Javascript`. Also ad
 ![radium 2](https://nvchad.com/screenshots/radium2.webp)
 ![radium 3](https://nvchad.com/screenshots/radium3.webp)
 
-## What is it?
 
-- NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). We tweak UI plugins such as telescope, nvim-tree, bufferline etc well to provide an aesthetic UI experience. 
 
 ## UI related plugins used
 
