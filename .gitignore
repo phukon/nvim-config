@@ -6,3 +6,4 @@ coc-settings.json
 .luarc.json
 after
 **/.DS_Store
+powershell.exe

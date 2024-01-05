@@ -21,65 +21,33 @@
 - Golang auto-completion snippets
 - Golang Auto-formatter
 
+## ⚠ Caveats
+You should have the following packages <u>installed in your system</u> (Globally/GOPATH for using Golang features)
+
+- gofumpt
+- goimports_reviser
+- golines
+- prettier
+
+## My plugin config.:
+1. **neovim/nvim-lspconfig**
+2. **williamboman/mason.nvim**
+    - Installed Language Servers:
+        - gopls
+        - eslint-lsp
+        - tailwindcss-language-server
+        - typescript-language-server
+3. **mfussenegger/nvim-dap**
+4. **leoluz/nvim-dap-go**
+    - For Go language
+    - Depends on mfussenegger/nvim-dap
+5. **jose-elias-alvarez/null-ls.nvim**
+    - For various languages: go, javascript, typescript, html, json, yaml
+6. **olexsmir/gopher.nvim**
+    - For Go language
+    - Depends on mfussenegger/nvim-dap
+    - Additional setup using Gopher and related mappings
+
+
 > What is it?
 > - NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). UI plugins such as telescope, nvim-tree, bufferline etc are tweaked well to provide an aesthetic UI experience. 
-
----
-
-## Showcase
-(Note: these are just 4-5 themes, NvChad has around 56 themes)
-![4 themes](https://nvchad.com/screenshots/four_Themes.webp)
-![radium 1](https://nvchad.com/screenshots/radium1.webp)
-![radium 2](https://nvchad.com/screenshots/radium2.webp)
-![radium 3](https://nvchad.com/screenshots/radium3.webp)
-
-
-
-## UI related plugins used
-
-<details><summary> <b>Images (Click to expand!)</b></summary>
-
-<h3> Nvim-tree.lua </h3>
-
-Fast file tree:
-
-<kbd><img src="https://nvchad.com/features/nvimtree.webp"/></kbd>
-
-<h3> Telescope-nvim </h3>
-
-A fuzzy file finder, picker, sorter, previewer and much more:
-
-<kbd><img src="https://nvchad.com/features/telescope.webp"/></kbd>
-
-<h3> Our own statusline written from scratch  </h3>
-
-[NvChad UI](https://github.com/NvChad/ui)
-
-<kbd><img src="https://nvchad.com/features/statuslines.webp"/></kbd>
-
-<h3> Tabufline (our own pertab bufferline) </h3>
-
-<kbd><img src="https://nvchad.com/features/tabufline.webp"/></kbd>
-- Here's a [video](https://www.youtube.com/watch?v=V_9iJ96U_k8&ab_channel=siduck) that showcases it.
-
-<h3> NvCheatsheet ( our UI Plugin ) </h3>
-<kbd> <img src="https://nvchad.com/features/nvcheatsheet.webp"/></kbd>
-
-</details>
-
-## Plugins list
-
-- Many beautiful themes, theme toggler by our [base46 plugin](https://github.com/NvChad/base46)
-- Inbuilt terminal toggling & management with [Nvterm](https://github.com/NvChad/nvterm)
-- Lightweight & performant ui plugin with [NvChad UI](https://github.com/NvChad/ui) It provides statusline modules, tabufline ( tabs + buffer manager) , beautiful cheatsheets, NvChad updater, hide & unhide terminal buffers, theme switcher and much more!
-- File navigation with [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- Beautiful and configurable icons with [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- Git diffs and more with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
-- NeoVim Lsp configuration with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [mason.nvim](https://github.com/williamboman/mason.nvim)
-- Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- File searching, previewing image and text files and more with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
-- Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Autoclosing braces and html tags with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Indentlines with [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Useful snippets with [friendly snippets](https://github.com/rafamadriz/friendly-snippets) + [LuaSnip](https://github.com/L3MON4D3/LuaSnip).
-- Popup mappings keysheet [whichkey.nvim](https://github.com/folke/which-key.nvim)
