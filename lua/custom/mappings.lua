@@ -32,6 +32,10 @@ M.dap_go = {
         require('dap-go').debug_last()
       end,
       "Debug last go test"
+    },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Start or continue the debugger",
     }
   }
 }
