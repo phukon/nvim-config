@@ -68,7 +68,6 @@ M.load_mappings = function(section, mapping_opt)
 
           mapping_info.opts, opts.mode = nil, nil
           opts.desc = mapping_info[2]
-
           vim.keymap.set(mode, keybind, mapping_info[1], opts)
         end
       end
@@ -77,6 +76,9 @@ M.load_mappings = function(section, mapping_opt)
     local mappings = require("core.utils").load_config().mappings
 
     if type(section) == "string" then
+      if not mappings[section] then
+        return
+      end
       mappings[section]["plugin"] = nil
       mappings = { mappings[section] }
     end

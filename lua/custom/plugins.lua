@@ -1,4 +1,10 @@
 local plugins ={
+  -- {
+  --   "ErichDonGubler/lsp_lines.nvim",
+  --   init = function ()
+  --     require("lsp_lines").setup()
+  --   end
+  -- },
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",

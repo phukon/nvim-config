@@ -16,6 +16,17 @@ M.general = {
   },
 
   n = {
+    -- To add lsp lines, removed it after I learnt of the floating diagnostics. lol
+    -- ["<leader>tl"] = {
+    --   function()
+    --     local lsp_lines_enabled = vim.diagnostic.config().virtual_text == false
+    --     vim.diagnostic.config({
+    --       virtual_text = lsp_lines_enabled,  -- toggles between lsp_lines and default diagnostics
+    --       virtual_lines = not lsp_lines_enabled,
+    --     })
+    --   end,
+    --   "Toggle lsp_lines"
+    -- },
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "Window left" },
