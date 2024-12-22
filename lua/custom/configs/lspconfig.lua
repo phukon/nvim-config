@@ -32,9 +32,10 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.clangd.setup {
-  on_attach = function (client, bufnr)
+  on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr),
+    on_attach(client, bufnr)
+  end,
   cmd = {
     "clangd",
     -- "--all-scopes-completion",
@@ -52,8 +53,7 @@ lspconfig.clangd.setup {
     -- "--header-insertion=never",
     -- "--query-driver=<list-of-white-listed-complers>"
   },
-  end,
-  capabilities = capabilities,
+  capabilities = capabilities
 }
 
 
