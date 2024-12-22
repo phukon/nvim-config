@@ -67,6 +67,10 @@ local plugins ={
       statuscolumn = { enabled = true },
       words = { enabled = true },
     },
+    keys = {
+      { "<leader>sd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      { "<leader>sh",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+    },
   },
   {
     "tikhomirov/vim-glsl",
