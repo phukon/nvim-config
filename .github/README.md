@@ -1,5 +1,5 @@
+![Screenshot 2024-12-22 202428](https://github.com/user-attachments/assets/3820b2e9-e8a9-4517-8a19-6669f4f9f1ac)
 <div align="center">
-<h1>My Neovim setup</h1>
 
 ![Static Badge](https://img.shields.io/badge/Neovim-phukon-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)
 
@@ -18,6 +18,7 @@
   - Golang
   - Typescript
   - Javascript
+- 🍿 snacks.nvim [@see](https://github.com/folke/snacks.nvim)
 - Check for unused variables in Golang
 - Debugger (Golang, CLang/C++ and Typescript)
 - Tailwind auto-completion snippets
