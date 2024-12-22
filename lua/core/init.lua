@@ -113,3 +113,13 @@ local new_cmd = vim.api.nvim_create_user_command
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
+-- The dash shows up but the buffer shows indent lines. Will fix this later.
+-- local show_dash = vim.api.nvim_create_user_command
+-- new_cmd("Dash", function()
+--   -- Create an empty buffer
+--   local buf = vim.api.nvim_create_buf(false, true)
+  
+--   -- Call the dashboard with the new buffer
+--   require("snacks").dashboard({ buffer = buf })
+-- end, {})

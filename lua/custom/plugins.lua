@@ -1,3 +1,13 @@
+local logo = [[
+██████╗ ██╗  ██╗██╗   ██╗██╗  ██╗ ██████╗ ███╗   ██╗
+██╔══██╗██║  ██║██║   ██║██║ ██╔╝██╔═══██╗████╗  ██║
+██████╔╝███████║██║   ██║█████╔╝ ██║   ██║██╔██╗ ██║
+██╔═══╝ ██╔══██║██║   ██║██╔═██╗ ██║   ██║██║╚██╗██║
+██║     ██║  ██║╚██████╔╝██║  ██╗╚██████╔╝██║ ╚████║
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+]]                                     
+logo = string.rep("\n", 4) .. logo .. "\n\n"
+
 local plugins ={
   -- {
   --   "ErichDonGubler/lsp_lines.nvim",
@@ -45,6 +55,9 @@ local plugins ={
       bigfile = { enabled = true },
       dashboard = {
         enabled = true,
+        preset = {
+          header = logo,
+        },
         sections = {
           { section = "header" },
           { section = "keys", gap = 1, padding = 1 },
