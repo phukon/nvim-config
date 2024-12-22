@@ -70,6 +70,7 @@ local plugins ={
     keys = {
       { "<leader>sd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
       { "<leader>sh",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
     },
   },
   {
