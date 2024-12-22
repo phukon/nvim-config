@@ -5,10 +5,72 @@ local plugins ={
   --     require("lsp_lines").setup()
   --   end
   -- },
+  -- {
+  --   "ellisonleao/glow.nvim",
+  --   config = function()
+  --     require("glow").setup({
+  --       glow_path = vim.fn.exepath("glow"), -- Explicitly tell plugin where to find glow
+  --       install_path = "C:\\Users\\YourUsername\\scoop\\apps\\glow\\current\\glow.exe", -- Adjust this path based on your scoop installation
+  --       border = "rounded",
+  --       style = "dark",
+  --       pager = false,
+  --       width = 120,
+  --     })
+  --   end,
+  --   cmd = "Glow"
+  -- }
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("avante").setup({
+  --       -- default configuration
+  --       theme = "auto", -- "auto", "dark", or "light"
+  --       transparent = false,
+  --       styles = {
+  --         comments = { italic = true },
+  --         keywords = { italic = true },
+  --         functions = {},
+  --         variables = {},
+  --       },
+  --     })
+  --   end,
+  -- },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      bigfile = { enabled = true },
+      dashboard = {
+        enabled = true,
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            section = "terminal",
+            cmd = "ascii-image-converter C:\\Users\\rikip\\Desktop\\EXIM\\pics\\profile\\anime-biker\\avatar.jpg -C -c",
+            random = 10,
+            pane = 2,
+            indent = 4,
+            height = 28
+          },
+        },
+      },
+      indent = { enabled = true },
+      input = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+    },
+  },
   {
     "tikhomirov/vim-glsl",
     ft = "glsl",
-    -- lazy = false
   },
   {
     "rcarriga/nvim-dap-ui",

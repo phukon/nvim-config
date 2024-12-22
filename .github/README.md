@@ -11,19 +11,20 @@
 
 ## Added:
 
+- Auto imports
+- Syntax highlighting for glsl (OpenGL Shading Language) files.
 - Language servers
   - CLang/C++
   - Golang
   - Typescript
   - Javascript
-- Auto imports
 - Check for unused variables in Golang
 - Debugger (Golang, CLang/C++ and Typescript)
 - Tailwind auto-completion snippets
 - Golang auto-completion snippets
 - Golang Auto-formatter
-- CLang/C++ auto-completion snippets
-- CLang/C++ Auto-formatter
+- C/C++ auto-completion snippets
+- C/C++ Auto-formatter
 
 ## ⚠ Caveats
 
