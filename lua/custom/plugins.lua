@@ -77,8 +77,8 @@ local plugins ={
       notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
+      statuscolumn = { enabled = false },
+      words = { enabled = false },
     },
     keys = {
       { "<leader>sd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
