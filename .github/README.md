@@ -1,4 +1,5 @@
 ![Screenshot 2024-12-22 202428](https://github.com/user-attachments/assets/3820b2e9-e8a9-4517-8a19-6669f4f9f1ac)
+
 <div align="center">
 
 ![Static Badge](https://img.shields.io/badge/Neovim-phukon-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white)
@@ -39,7 +40,7 @@ You should have the following packages <u>installed in your system</u> (Globally
 ## My plugin config.:
 
 1. **neovim/nvim-lspconfig**
-2. **williamboman/mason.nvim**
+2. **williamboman/mason.nvim** (package manager for LSPs)
    - Installed Language Servers:
      - gopls
      - eslint-lsp

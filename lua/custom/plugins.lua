@@ -5,47 +5,16 @@ local logo = [[
 ██╔═══╝ ██╔══██║██║   ██║██╔═██╗ ██║   ██║██║╚██╗██║
 ██║     ██║  ██║╚██████╔╝██║  ██╗╚██████╔╝██║ ╚████║
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-]]                                     
+]]
 logo = string.rep("\n", 4) .. logo .. "\n\n"
 
 local plugins ={
-  -- {
-  --   "ErichDonGubler/lsp_lines.nvim",
-  --   init = function ()
-  --     require("lsp_lines").setup()
-  --   end
-  -- },
-  -- {
-  --   "ellisonleao/glow.nvim",
-  --   config = function()
-  --     require("glow").setup({
-  --       glow_path = vim.fn.exepath("glow"), -- Explicitly tell plugin where to find glow
-  --       install_path = "C:\\Users\\YourUsername\\scoop\\apps\\glow\\current\\glow.exe", -- Adjust this path based on your scoop installation
-  --       border = "rounded",
-  --       style = "dark",
-  --       pager = false,
-  --       width = 120,
-  --     })
-  --   end,
-  --   cmd = "Glow"
-  -- }
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("avante").setup({
-  --       -- default configuration
-  --       theme = "auto", -- "auto", "dark", or "light"
-  --       transparent = false,
-  --       styles = {
-  --         comments = { italic = true },
-  --         keywords = { italic = true },
-  --         functions = {},
-  --         variables = {},
-  --       },
-  --     })
-  --   end,
-  -- },
+  -- my custom plugins
+  {
+    "stackmap.nvim",
+    dir = vim.fn.expand("$HOME") .. "/Desktop/EXIM/Projects/lua-projects/stackmap.nvim"
+  },
+  -- ====================================
   {
     "folke/snacks.nvim",
     priority = 1000,
