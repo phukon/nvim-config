@@ -10,10 +10,10 @@ logo = string.rep("\n", 4) .. logo .. "\n\n"
 
 local plugins ={
   -- my custom plugins
-  {
-    "stackmap.nvim",
-    dir = vim.fn.expand("$HOME") .. "/Desktop/EXIM/Projects/lua-projects/stackmap.nvim"
-  },
+  -- {
+  --   "stackmap.nvim",
+  --   dir = vim.fn.expand("$HOME") .. "/Desktop/EXIM/Projects/lua-projects/stackmap.nvim"
+  -- },
   -- ====================================
   {
     "folke/snacks.nvim",
@@ -33,7 +33,7 @@ local plugins ={
           { section = "startup" },
           {
             section = "terminal",
-            cmd = "ascii-image-converter C:\\Users\\rikip\\Desktop\\EXIM\\pics\\profile\\anime-biker\\avatar.jpg -C -c",
+            cmd = "ascii-image-converter C:\\Users\\rikip\\Desktop\\exim\\pics\\profile\\anime-biker\\avatar.jpg -C -c",
             random = 10,
             pane = 2,
             indent = 4,
