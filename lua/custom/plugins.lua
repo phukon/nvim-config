@@ -33,7 +33,7 @@ local plugins ={
           { section = "startup" },
           {
             section = "terminal",
-            cmd = "ascii-image-converter C:\\Users\\rikip\\Desktop\\exim\\pics\\profile\\anime-biker\\avatar.jpg -C -c",
+            cmd = "~/.local/bin/ascii-image-converter ~/Pictures/phukon.png -C -c",
             random = 10,
             pane = 2,
             indent = 4,
@@ -129,7 +129,7 @@ local plugins ={
     end
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     ft = {"go", "javascript", "typescript", "html", "json", "yaml"},
     opts = function()
@@ -151,7 +151,7 @@ local plugins ={
     "NvChad/nvterm",
     opts = {
       terminals = {
-        shell = "powershell.exe",
+        shell = "/usr/bin/fish",
         type_opts = {
           float = {
             relative = 'editor',
