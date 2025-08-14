@@ -1,17 +1,5 @@
 local M = {}
 
-M.terminal = {
-  n = {
-    ["<leader>tk"] = {
-      function()
-        local cwd = vim.fn.getcwd()
-        vim.fn.jobstart({ "kitty", "--directory", cwd }, { detach = true })
-      end,
-      "Open Kitty in project directory",
-    },
-  },
-}
-
 M.dap = {
   plugin = true,
   n = {

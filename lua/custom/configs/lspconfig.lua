@@ -5,7 +5,7 @@ local capabilities = base.capabilities
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
-local servers = {"ts_ls", "tailwindcss", "eslint"}
+local servers = {"tsserver", "tailwindcss", "eslint"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
@@ -13,6 +13,36 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities
   })
 end
+
+-- lspconfig.tsserver.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+--   settings = {
+--     typescript = {
+--       inlayHints = {
+--         includeInlayParameterNameHints = 'all',
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       }
+--     },
+--     javascript = {
+--       inlayHints = {
+--         includeInlayParameterNameHints = 'all',
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       }
+--     }
+--   }
+-- })
 
 lspconfig.gopls.setup({
   on_attach = on_attach,
@@ -56,16 +86,3 @@ lspconfig.clangd.setup {
   -- },
   capabilities = capabilities
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
