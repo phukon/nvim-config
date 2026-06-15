@@ -4,22 +4,35 @@ require "nvchad.lsp"
 local M = {}
 local utils = require "core.utils"
 
--- export on_attach & capabilities for custom lspconfigs
+-- Global LspAttach handler (replaces per-server on_attach)
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("NvChadLspAttach", { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local bufnr = args.buf
 
-M.on_attach = function(client, bufnr)
-  client.server_capabilities.documentFormattingProvider = false
-  client.server_capabilities.documentRangeFormattingProvider = false
+    if not client then return end
 
-  utils.load_mappings("lspconfig", { buffer = bufnr })
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
 
-  if client.server_capabilities.signatureHelpProvider then
-    require("nvchad.signature").setup(client)
-  end
+    utils.load_mappings("lspconfig", { buffer = bufnr })
 
-  if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
-    client.server_capabilities.semanticTokensProvider = nil
-  end
-end
+    -- clangd-specific: disable signature help before the check below
+    if client.name == "clangd" then
+      client.server_capabilities.signatureHelpProvider = false
+      client.offset_encoding = "utf-16"
+    end
+
+    if client.server_capabilities.signatureHelpProvider then
+      require("nvchad.signature").setup(client)
+    end
+
+    if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end,
+})
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -41,10 +54,8 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
-  on_attach = M.on_attach,
+vim.lsp.config('lua_ls', {
   capabilities = M.capabilities,
-
   settings = {
     Lua = {
       diagnostics = {
@@ -62,6 +73,7 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
-}
+})
+vim.lsp.enable('lua_ls')
 
 return M

@@ -1,88 +1,36 @@
 local base = require("plugins.configs.lspconfig")
-local on_attach = base.on_attach
 local capabilities = base.capabilities
 
-local lspconfig = require("lspconfig")
-local util = require "lspconfig/util"
-
-local servers = {"ts_ls", "tailwindcss", "eslint"}
+-- Simple servers with default settings
+local servers = { "ts_ls", "tailwindcss", "eslint" }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    on_attach = on_attach,
-    capabilities = capabilities
+  vim.lsp.config(lsp, {
+    capabilities = capabilities,
   })
+  vim.lsp.enable(lsp)
 end
 
--- lspconfig.tsserver.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
---   settings = {
---     typescript = {
---       inlayHints = {
---         includeInlayParameterNameHints = 'all',
---         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
---         includeInlayFunctionParameterTypeHints = true,
---         includeInlayVariableTypeHints = true,
---         includeInlayPropertyDeclarationTypeHints = true,
---         includeInlayFunctionLikeReturnTypeHints = true,
---         includeInlayEnumMemberValueHints = true,
---       }
---     },
---     javascript = {
---       inlayHints = {
---         includeInlayParameterNameHints = 'all',
---         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
---         includeInlayFunctionParameterTypeHints = true,
---         includeInlayVariableTypeHints = true,
---         includeInlayPropertyDeclarationTypeHints = true,
---         includeInlayFunctionLikeReturnTypeHints = true,
---         includeInlayEnumMemberValueHints = true,
---       }
---     }
---   }
--- })
-
-lspconfig.gopls.setup({
-  on_attach = on_attach,
+-- gopls
+vim.lsp.config('gopls', {
   capabilities = capabilities,
-  cmd = {"gopls"},
-  filetypes = {"go", "gomod", "gowork", "gotmpl"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_markers = { "go.work", "go.mod", ".git" },
   settings = {
     gopls = {
       completeUnimported = true,
       usePlaceholders = true,
-      analyses ={
+      analyses = {
         unusedparams = true,
-      }
-    }
-  }
+      },
+    },
+  },
 })
+vim.lsp.enable('gopls')
 
-lspconfig.clangd.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
-    client.offset_encoding = "utf-16"
-    on_attach(client, bufnr)
-  end,
-  -- cmd = {
-  --   "clangd",
-  --   -- "--all-scopes-completion",
-  --   -- "--suggest-missing-includes",
-  --   -- "--background-index",
-  --   -- "--pch-storage=disk",
-  --   -- "--cross-file-rename",
-  --   -- "--log=info",
-  --   -- "--completion-style=detailed",
-  --   -- "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
-  --   -- "--clang-tidy",
-  --   "--offset-encoding=utf-16",
-  --   -- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type",
-  --   -- "--fallback-style=Google",
-  --   -- "--header-insertion=never",
-  --   -- "--query-driver=<list-of-white-listed-complers>"
-  -- },
-  capabilities = capabilities
-}
+-- clangd (on_attach overrides handled in LspAttach autocmd in plugins/configs/lspconfig.lua)
+vim.lsp.config('clangd', {
+  capabilities = capabilities,
+})
+vim.lsp.enable('clangd')
