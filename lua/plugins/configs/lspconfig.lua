@@ -1,5 +1,20 @@
 dofile(vim.g.base46_cache .. "lsp")
-require "nvchad.lsp"
+-- Diagnostic signs & config (replaces deprecated require "nvchad.lsp")
+vim.diagnostic.config {
+  virtual_text = {
+    prefix = "",
+  },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅙",
+      [vim.diagnostic.severity.INFO]  = "󰋼",
+      [vim.diagnostic.severity.HINT]  = "󰌵",
+      [vim.diagnostic.severity.WARN]  = "",
+    },
+  },
+  underline = true,
+  update_in_insert = false,
+}
 
 local M = {}
 local utils = require "core.utils"
@@ -31,7 +46,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       require("nvchad.signature").setup(client)
     end
 
-    if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
+    if not utils.load_config().ui.lsp_semantic_tokens and client:supports_method "textDocument/semanticTokens" then
       client.server_capabilities.semanticTokensProvider = nil
     end
   end,
