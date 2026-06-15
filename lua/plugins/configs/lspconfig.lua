@@ -13,8 +13,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     if not client then return end
 
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
+    -- Don't disable formatting for null-ls (none-ls) — it's the formatter
+    if client.name ~= "null-ls" then
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+    end
 
     utils.load_mappings("lspconfig", { buffer = bufnr })
 
